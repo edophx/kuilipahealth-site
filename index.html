@@ -80,8 +80,8 @@ h1{margin-top:34px;font-weight:500;font-size:clamp(1.7rem,5.6vw,2.15rem);line-he
 .social a:hover .ic,.social a:focus-visible .ic{background:#467D84;border-color:#467D84;color:var(--cream);transform:translateY(-2px)}
 .social svg{width:19px;height:19px;fill:currentColor}
 .social .lbl{font-size:.72rem;font-weight:500;color:var(--ink);opacity:.8}
-@media (max-width:600px){.social{display:flex;flex-wrap:wrap;justify-content:center;row-gap:14px;column-gap:4px;max-width:320px}.social a{width:74px}}
-@media (max-width:420px){.social .ic{width:42px;height:42px}.social .lbl{font-size:.66rem}}
+@media (max-width:600px){.social{grid-template-columns:repeat(6,minmax(0,1fr));gap:0;max-width:372px}.social .ic{width:40px;height:40px}.social svg{width:17px;height:17px}.social .lbl{font-size:.58rem;letter-spacing:-.01em}}
+@media (max-width:420px){.social .ic{width:38px;height:38px}.social .lbl{font-size:.55rem}}@media (max-width:350px){.social{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:12px;max-width:240px}}
 footer{margin-top:48px;font-size:.78rem;color:#57645f;padding-bottom:env(safe-area-inset-bottom)}
 @media (max-width:420px){.pillars{gap:8px}.pillar{font-size:.76rem;padding:14px 6px;border-radius:14px}}
 .signup{max-width:420px;margin:16px auto 0}

@@ -151,6 +151,30 @@ footer .phones a:hover,footer .phones a:focus-visible{background:#467D84;border-
 .call-top{margin-bottom:12px}
 @media (max-width:600px){.call-top{align-self:center;margin-left:auto;margin-right:auto;margin-bottom:12px}}
 
+/* Soft KLH sage-to-green tint on the Notify me button. */
+.signup .formkit-form[data-uid] .formkit-submit{
+  background:linear-gradient(90deg,#B5CBCE,#BFD3B1)!important;
+  color:#34433E!important;
+}
+.signup .formkit-form[data-uid] .formkit-submit:hover,
+.signup .formkit-form[data-uid] .formkit-submit:focus-visible{
+  background:linear-gradient(90deg,#A2BEC2,#B0C89E)!important;
+  color:#34433E!important;
+}
+.signup .formkit-form[data-uid] .formkit-submit:focus-visible{
+  outline:2px solid var(--sage)!important;
+  outline-offset:3px!important;
+}
+.signup .formkit-form[data-uid] .formkit-submit:hover>span,
+.signup .formkit-form[data-uid] .formkit-submit:focus>span,
+.signup .formkit-form[data-uid] .formkit-submit:focus-visible>span{
+  background-color:transparent!important;
+}
+.signup .formkit-form[data-uid] .formkit-submit .formkit-spinner>div{
+  background-color:#34433E!important;
+  opacity:.7!important;
+}
+
 /* Soft KLH sage-to-green tint on phone/fax pills. */
 .call-top,
 footer .phones a{

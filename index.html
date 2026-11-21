@@ -150,6 +150,31 @@ footer .phones a:hover,footer .phones a:focus-visible{background:#467D84;border-
 @media (max-width:520px){footer .phones{flex-direction:column;gap:8px;align-items:center}footer .phones a{min-width:min(260px,100%);justify-content:center}}
 .call-top{margin-bottom:12px}
 @media (max-width:600px){.call-top{align-self:center;margin-left:auto;margin-right:auto;margin-bottom:12px}}
+
+/* Soft KLH sage-to-green tint on phone/fax pills. */
+.call-top,
+footer .phones a{
+  background:linear-gradient(90deg,#B5CBCE,#BFD3B1);
+  border-color:rgba(70,125,132,.28);
+  color:var(--ink);
+  box-shadow:0 1px 2px rgba(52,67,62,.06);
+}
+.call-top:hover,
+.call-top:focus-visible,
+footer .phones a:hover,
+footer .phones a:focus-visible{
+  background:linear-gradient(90deg,#A2BEC2,#B0C89E);
+  border-color:rgba(70,125,132,.4);
+  color:var(--ink);
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px rgba(70,125,132,.18);
+  text-decoration:none;
+}
+.call-top:focus-visible,
+footer .phones a:focus-visible{
+  outline:2px solid var(--sage);
+  outline-offset:3px;
+}
 </style>
 </head>
 <body>

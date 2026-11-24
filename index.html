@@ -107,10 +107,12 @@ footer{margin-top:48px;font-size:.78rem;color:#57645f;padding-bottom:env(safe-ar
 .signup .formkit-submit{border-radius:999px!important;font-family:inherit!important;font-weight:500!important;margin-top:8px;margin-bottom:16px!important}
 .signup .formkit-disclaimer{color:var(--ink)!important;opacity:.7;font-size:.78rem!important;line-height:1.5}
 .signup .formkit-powered-by-convertkit-container{margin-top:8px!important}
-.privacy-note{margin:16px auto 0;font-size:.78rem}
-.privacy-note a{color:#57645f;text-decoration:none;padding:8px 4px;display:inline-block}
-.privacy-note a:hover,.privacy-note a:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}
-.signup+.privacy-note+.social{margin-top:36px}
+.signup .privacy-note{margin:10px 0 0!important;font-size:.75rem!important;font-weight:400!important;line-height:1.5!important;color:#57645f!important;text-align:center!important;text-decoration:none!important}
+.signup .privacy-note a,.signup .privacy-note a:visited,.signup .privacy-note a:hover,.signup .privacy-note a:active,.signup .privacy-note a:focus,.signup .privacy-note a:focus-visible{color:#57645f!important;font-weight:400!important;text-decoration:none!important;display:inline-block;border-radius:2px}
+.signup .privacy-note a:hover,.signup .privacy-note a:hover strong{color:#45514d!important;text-decoration:none!important}
+.signup .privacy-note a:focus-visible{outline:2px solid #467D84!important;outline-offset:2px!important}
+.signup .privacy-note a strong,.signup .privacy-note strong{font-weight:600!important;color:inherit!important;text-decoration:none!important}
+.signup+.social{margin-top:36px}
 footer a{color:inherit;text-decoration:none;padding:8px 4px;display:inline-block}
 footer a:hover,footer a:focus-visible{text-decoration:underline;text-underline-offset:3px}
 .meaning strong{font-weight:600}
@@ -247,7 +249,6 @@ svg.hb.hb-b{opacity:.85}
   <div class="cta fade d6">
     <div class="follow" aria-hidden="true"><svg class="hb hb-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 16" width="52" height="16" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="hb-fade-signup" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#467D84"/><stop offset="1" stop-color="#60923C"/></linearGradient></defs><path stroke="url(#hb-fade-signup)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 9 H16 L18.2 6.4 L20 9 L22.3 13.6 L26 2.2 L29.7 13.6 L32 9 L33.8 6.4 L35.6 9 H50.5"/></svg></div>
     <div class="signup"><script async data-uid="178e2e948c" src="https://kui-lipa-health.kit.com/178e2e948c/index.js"></script></div>
-    <p class="privacy-note"><a href="privacy.html">We respect your privacy</a></p>
     <nav class="social" aria-label="Contact and social media">
     <a href="https://www.facebook.com/kuilipahealth" target="_blank" rel="noopener" aria-label="Facebook"><span class="ic"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 10-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0024 12z"/></svg></span><span class="lbl">Facebook</span></a>
     <a href="https://www.instagram.com/kuilipahealth/" target="_blank" rel="noopener" aria-label="Instagram"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.4 1.4 0 100 2.9 1.4 1.4 0 000-2.9z"/></svg></span><span class="lbl">Instagram</span></a>
@@ -261,8 +262,10 @@ svg.hb.hb-b{opacity:.85}
 <footer><nav class="phones" aria-label="Phone and fax"><a href="tel:+16029052222" aria-label="Call main line (602) 905-2222"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3M6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9m8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475zm0 0"/></svg><span class="kind">Main</span> <span class="num">(602) 905-2222</span></a><a href="tel:+16029057777" aria-label="Fax (602) 905-7777"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 21q-1.25 0-2.125-.875T2 18v-7q0-1.25.875-2.125T5 8q.675 0 1.238.275T7.225 9H8V4h10v5h1q1.25 0 2.125.875T22 12v8H7.225q-.425.45-.987.725T5 21m0-2q.425 0 .713-.288T6 18v-7q0-.425-.288-.712T5 10t-.712.288T4 11v7q0 .425.288.713T5 19m5-10h6V6h-6zm-2 9h12v-6q0-.425-.288-.712T19 11H8zm7.713-4.288Q16 13.425 16 13t-.288-.712T15 12t-.712.288T14 13t.288.713T15 14t.713-.288m3 0Q19 13.426 19 13t-.288-.712T18 12t-.712.288T17 13t.288.713T18 14t.713-.288m-3 3Q16 16.426 16 16t-.288-.712T15 15t-.712.288T14 16t.288.713T15 17t.713-.288m3 0Q19 16.426 19 16t-.288-.712T18 15t-.712.288T17 16t.288.713T18 17t.713-.288M9 17h4v-5H9zm-1 1v-7z"/></svg><span class="kind">Fax</span> <span class="num">(602) 905-7777</span></a></nav><p>&copy; <span id="yr">2026</span> Kui Lipa Health &middot; Phoenix, Arizona &middot; <a href="privacy.html">Privacy</a></p></footer>
 <script>
 (function(){var box=document.querySelector('.signup');if(!box)return;
-function go(){var h=box.querySelector('.formkit-disclaimer');if(!h||h.querySelector('.kbrand'))return !!h;
-var w=document.createTreeWalker(h,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode())){var i=n.nodeValue.indexOf('Kui Lipa Health');if(i>-1){var r=n.splitText(i);r.splitText(15);var sp=document.createElement('span');sp.className='kbrand';r.parentNode.replaceChild(sp,r);sp.appendChild(r);return true}}return true}
+function go(){var h=box.querySelector('.formkit-disclaimer');if(!h)return false;
+if(!h.querySelector('.kbrand')){var w=document.createTreeWalker(h,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode())){var i=n.nodeValue.indexOf('Kui Lipa Health');if(i>-1){var r=n.splitText(i);r.splitText(15);var sp=document.createElement('span');sp.className='kbrand';r.parentNode.replaceChild(sp,r);sp.appendChild(r);break}}}
+if(!box.querySelector('.privacy-note')){var dp=h.querySelector('p');if(dp)dp.style.marginBottom='0';var p=document.createElement('p');p.className='privacy-note';var a=document.createElement('a');a.href='privacy.html';a.appendChild(document.createTextNode('We respect your '));var s=document.createElement('strong');s.textContent='privacy';a.appendChild(s);p.appendChild(a);h.insertAdjacentElement('afterend',p)}
+return !!h.querySelector('.kbrand')&&!!box.querySelector('.privacy-note')}
 if(!go()){var o=new MutationObserver(function(){if(go())o.disconnect()});o.observe(box,{childList:true,subtree:true});setTimeout(function(){o.disconnect()},15000)}})();
 </script>
 <script>(function(){var e=document.getElementById("yr");if(e)e.textContent=new Date().getFullYear()})();</script>

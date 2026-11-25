@@ -19,7 +19,7 @@
 @font-face{font-family:Literata;font-style:normal;font-weight:500 600;font-display:swap;src:url("literata-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:Literata;font-style:normal;font-weight:500 600;font-display:swap;src:url("literata-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 
-:root{--a:#1F3A30;--b:#24423A;--c:#1C352C;--foot:#172D25;--cream:#F4ECDA;--soft:#BFCBB9;--text:var(--soft);--muted:var(--soft);--gold:#E8B33A;--gold2:#F1C55E;--line:rgba(244,236,218,.16);--card:rgba(255,255,255,.05);--ink:#1C352C;color-scheme:dark}
+:root{--a:#1F3A30;--b:#24423A;--c:#1C352C;--foot:#172D25;--cream:#FBF5E8;--soft:#E6E0D0;--text:var(--soft);--muted:var(--soft);--gold:#E8B33A;--gold2:#F1C55E;--line:rgba(244,236,218,.16);--card:rgba(255,255,255,.05);--ink:#1C352C;color-scheme:dark}
 *{box-sizing:border-box;margin:0;padding:0;min-width:0}
 html{background:var(--a);scroll-behavior:smooth;scroll-padding-top:104px}
 @media (max-width:1023px){html{scroll-padding-top:138px}}
@@ -147,24 +147,25 @@ h1,h2.serif,.serif,h3{font-family:Literata,Georgia,serif;font-weight:600;color:v
 .faq details p{padding:0 0 16px;color:var(--soft);font-size:.95rem}
 /* footer */
 footer{background:var(--foot);border-top:1px solid var(--line);padding:56px 0 calc(28px + env(safe-area-inset-bottom));font-size:.9rem;color:var(--text)}
-.fcols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
+.fcols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(max-content,1fr) minmax(0,1fr);gap:32px;align-items:start}
 @media (max-width:759px){.fcols{grid-template-columns:1fr;text-align:center;justify-items:center}}
 .flogo{display:inline-block;line-height:0;border-radius:8px}
 .flogo img{width:150px;height:auto}
 .fcol p{margin-top:12px;color:var(--muted)}
 footer .phones{display:grid;grid-template-columns:max-content;gap:10px;justify-content:start}
 @media (max-width:759px){footer .phones{justify-content:center}}
-footer .phones a{display:flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:999px;text-decoration:none;color:var(--cream);background:rgba(244,236,218,.06);border:1px solid rgba(244,236,218,.35);white-space:nowrap;transition:all .2s}
-footer .phones .kind{display:inline-block;min-width:2.6em}
+footer .phones a{display:grid;grid-template-columns:18px 3.2em auto;align-items:center;column-gap:10px;height:46px;padding:0 20px;border-radius:999px;text-decoration:none;color:var(--cream);background:rgba(244,236,218,.06);border:1px solid rgba(244,236,218,.35);white-space:nowrap;transition:all .2s}
+footer .phones .kind{display:block;text-align:left}
+footer .phones .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
 footer .phones a:hover,footer .phones a:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 footer .phones svg{width:18px;height:18px;flex:none}
 footer .phones .kind{font-weight:600}
 .flinks{list-style:none;display:grid;gap:4px}
-.flinks a{display:inline-flex;align-items:center;min-height:44px;color:var(--cream);text-decoration:none;transition:color .2s}
+.flinks a{display:inline-flex;align-items:center;min-height:44px;color:var(--cream);font-weight:400;text-decoration:none;transition:color .2s}
 .flinks a:hover,.flinks a:focus-visible{color:var(--gold)}
 .flinks.pages{gap:0}
-.legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.84rem;text-align:center}
-.legal a{display:inline-block;padding:10px 4px;color:var(--cream);font-weight:400;text-decoration:none}
+.legal{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.84rem;text-align:center}
+.legal a{display:inline-block;padding:10px 4px;color:inherit;font-weight:400!important;text-decoration:none!important}
 .legal a:hover,.legal a:focus-visible{color:var(--gold)}
 @media (min-width:1600px){html{font-size:112.5%}}
 /* ---------- Kit form, dark (same selectors as the live site) ---------- */
@@ -172,20 +173,20 @@ footer .phones .kind{font-weight:600}
 .signup .formkit-background{display:none!important}
 .signup .formkit-form[data-uid] [data-style="full"]{display:block!important}
 .signup .formkit-column{padding:clamp(18px,6vw,26px)!important}
-.signup .formkit-header{margin-bottom:16px!important;font-size:1.3rem!important;font-weight:600!important;line-height:1.3;color:#F4ECDA!important;font-family:Literata,Georgia,serif!important;text-align:center}
+.signup .formkit-header{margin-bottom:16px!important;font-size:1.3rem!important;font-weight:600!important;line-height:1.3;color:#FBF5E8!important;font-family:Literata,Georgia,serif!important;text-align:center}
 .signup .formkit-header h2{margin:0!important;font-size:inherit!important;font-weight:inherit!important;color:inherit!important;font-family:inherit!important}
 .signup .formkit-input{font-family:Poppins,system-ui,sans-serif!important;border-radius:999px!important;padding:12px 18px!important;background:#FBF6EC!important;color:#1C352C!important;font-size:16px !important}
 .signup .formkit-input{border:1px solid rgba(232,179,58,.7)!important;box-shadow:none!important}
 .signup .formkit-input:focus{border-color:#E8B33A!important;outline:none!important;box-shadow:0 0 0 3px rgba(232,179,58,.45)!important}
 .signup .formkit-input::placeholder{color:#55625C!important;opacity:1!important}
 .signup .formkit-submit{border-radius:999px!important;font-family:Poppins,system-ui,sans-serif!important;font-weight:600!important;margin-top:8px;margin-bottom:16px!important}
-.signup .formkit-disclaimer{color:#BFCBB9!important;opacity:1!important;font-size:.8rem!important;line-height:1.55;text-align:center;text-wrap:balance;max-width:34ch;margin-left:auto!important;margin-right:auto!important}
+.signup .formkit-disclaimer{color:#E6E0D0!important;opacity:1!important;font-size:.8rem!important;line-height:1.55;text-align:center;text-wrap:balance;max-width:34ch;margin-left:auto!important;margin-right:auto!important}
 .signup [data-element="disclaimer"] p{text-wrap:balance}
 .signup [data-element="disclaimer"] strong,.signup .kbrand{white-space:nowrap}
 @media (max-width:359px){.signup [data-element="disclaimer"],.signup [data-element="disclaimer"] p{font-size:.75rem!important}}
 .signup .formkit-powered-by-convertkit-container{margin-top:8px!important}
-.signup .privacy-note{margin:10px 0 0!important;font-size:.8rem!important;font-weight:400!important;line-height:1.5!important;color:#BFCBB9!important;text-align:center!important;text-decoration:none!important}
-.signup .privacy-note a,.signup .privacy-note a:visited,.signup .privacy-note a:hover,.signup .privacy-note a:active,.signup .privacy-note a:focus,.signup .privacy-note a:focus-visible{color:#F4ECDA!important;font-weight:400!important;text-decoration:none!important;display:inline-block;border-radius:2px;padding:6px 2px}
+.signup .privacy-note{margin:10px 0 0!important;font-size:.8rem!important;font-weight:400!important;line-height:1.5!important;color:#E6E0D0!important;text-align:center!important;text-decoration:none!important}
+.signup .privacy-note a,.signup .privacy-note a:visited,.signup .privacy-note a:hover,.signup .privacy-note a:active,.signup .privacy-note a:focus,.signup .privacy-note a:focus-visible{color:#FBF5E8!important;font-weight:400!important;text-decoration:none!important;display:inline-block;border-radius:2px;padding:6px 2px}
 .signup .privacy-note a:hover,.signup .privacy-note a:hover strong,.signup .privacy-note a:focus-visible,.signup .privacy-note a:focus-visible strong{color:#E8B33A!important;text-decoration:none!important}
 .signup .privacy-note a:focus-visible{outline:2px solid #E8B33A!important;outline-offset:2px!important}
 .signup .privacy-note a strong,.signup .privacy-note strong{font-weight:400!important;color:inherit!important}
@@ -219,7 +220,7 @@ footer .phones .kind{font-weight:600}
 </head>
 <body>
 <!-- Plain-language summary. Not legal advice; recommend review by counsel before the practice sees patients. -->
-<header class="site"><div class="bar"><a class="brand" href="index.html" title="Kui Lipa Health home"><picture><source type="image/webp" srcset="logo-dark.webp?v=3"><img src="logo-dark.png?v=3" width="420" height="459" alt="Kui Lipa Health, Family Care"></picture></a><nav aria-label="Main"><ul class="links"><li><a href="index.html#our-name">Our name</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#team">Care team</a></li><li><a href="index.html#expect">What to expect</a></li><li><a href="index.html#faq">Questions</a></li><li><a href="our-story.html">Our founders’ story</a></li></ul></nav><a class="btn gold" href="index.html#signup">Notify me</a></div></header>
+<header class="site"><div class="bar"><a class="brand" href="index.html" title="Kui Lipa Health home"><picture><source type="image/webp" srcset="logo-dark.webp?v=4"><img src="logo-dark.png?v=4" width="420" height="459" alt="Kui Lipa Health, Family Care"></picture></a><nav aria-label="Main"><ul class="links"><li><a href="index.html#our-name">Our name</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#team">Care team</a></li><li><a href="index.html#expect">What to expect</a></li><li><a href="index.html#faq">Questions</a></li><li><a href="our-story.html">Our founders’ story</a></li></ul></nav><a class="btn gold" href="index.html#signup">Notify me</a></div></header>
 <main id="top">
 <section class="band a" aria-labelledby="privacy-h"><div class="wrap legaldoc">
 <h1 id="privacy-h">Privacy Policy</h1>
@@ -260,7 +261,7 @@ footer .phones .kind{font-weight:600}
 </div></section>
 </main>
 <footer><div class="wrap"><div class="fcols">
-<div class="fcol"><a class="flogo" href="index.html" aria-label="Kui Lipa Health home"><picture><source type="image/webp" srcset="logo-dark.webp?v=3"><img src="logo-dark.png?v=3" width="420" height="459" loading="lazy" alt="Kui Lipa Health, Family Care"></picture></a></div>
+<div class="fcol"><a class="flogo" href="index.html" aria-label="Kui Lipa Health home"><picture><source type="image/webp" srcset="logo-dark.webp?v=4"><img src="logo-dark.png?v=4" width="420" height="459" loading="lazy" alt="Kui Lipa Health, Family Care"></picture></a></div>
 <div class="fcol"><nav class="phones" aria-label="Phone and fax"><a href="tel:+16029052222" aria-label="Call main line (602) 905-2222"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3M6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9m8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475zm0 0"/></svg><span class="kind">Main</span> <span class="num">(602) 905-2222</span></a><a href="tel:+16029057777" aria-label="Fax (602) 905-7777"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 21q-1.25 0-2.125-.875T2 18v-7q0-1.25.875-2.125T5 8q.675 0 1.238.275T7.225 9H8V4h10v5h1q1.25 0 2.125.875T22 12v8H7.225q-.425.45-.987.725T5 21m0-2q.425 0 .713-.288T6 18v-7q0-.425-.288-.712T5 10t-.712.288T4 11v7q0 .425.288.713T5 19m5-10h6V6h-6zm-2 9h12v-6q0-.425-.288-.712T19 11H8zm7.713-4.288Q16 13.425 16 13t-.288-.712T15 12t-.712.288T14 13t.288.713T15 14t.713-.288m3 0Q19 13.426 19 13t-.288-.712T18 12t-.712.288T17 13t.288.713T18 14t.713-.288m-3 3Q16 16.426 16 16t-.288-.712T15 15t-.712.288T14 16t.288.713T15 17t.713-.288m3 0Q19 16.426 19 16t-.288-.712T18 15t-.712.288T17 16t.288.713T18 17t.713-.288M9 17h4v-5H9zm-1 1v-7z"/></svg><span class="kind">Fax</span> <span class="num">(602) 905-7777</span></a></nav><ul class="flinks"><li><a href="mailto:hello@kuilipahealth.com">hello@kuilipahealth.com</a></li></ul></div>
 <nav class="fcol" aria-label="Footer"><ul class="flinks pages"><li><a href="index.html#our-name">Our name</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#team">Care team</a></li><li><a href="index.html#expect">What to expect</a></li><li><a href="index.html#faq">Questions</a></li><li><a href="our-story.html">Our founders’ story</a></li><li><a href="privacy.html">Privacy</a></li></ul></nav>
 </div>

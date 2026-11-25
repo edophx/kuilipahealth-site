@@ -218,11 +218,57 @@ svg.hb.hb-a{opacity:.6}
 svg.hb.hb-b{opacity:.85}
 .about svg.hb.hb-next{margin-top:24px}
 .about svg.hb + .label.second{margin-top:0}
+
+/* Expanded sections (draft) */
+.sec{margin:48px auto 0;text-align:center}
+.sec .label{font-size:.86rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-text);margin-bottom:8px}
+.sec .intro{font-size:1rem;line-height:1.7;color:var(--ink);max-width:520px;margin:0 auto;text-wrap:balance}
+.sec .note{font-size:.8rem;line-height:1.6;color:#57645f;margin:16px auto 0;max-width:520px}
+.sec.wide{margin-left:calc(50% - min(440px,50vw - 20px));margin-right:calc(50% - min(440px,50vw - 20px))}
+.cards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px;text-align:left}
+@media (min-width:540px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:820px){.cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.card{background:rgba(255,255,255,.6);border:1px solid rgba(70,125,132,.15);border-radius:18px;padding:18px 20px;backdrop-filter:blur(4px)}
+.card h3{font-size:1rem;font-weight:500;line-height:1.35;color:var(--sage-text);margin-bottom:6px}
+.card p{font-size:.9rem;line-height:1.6;color:#4d5a55}
+.card.solo{max-width:520px;margin:20px auto 0;text-align:center}
+.card.solo p{font-size:1rem;line-height:1.7;color:var(--ink)}
+.card.solo p+p{margin-top:10px}
+.faq{max-width:560px;margin:20px auto 0;text-align:left;background:rgba(255,255,255,.6);border:1px solid rgba(70,125,132,.15);border-radius:18px;padding:4px 20px;backdrop-filter:blur(4px)}
+.faq details{border-bottom:1px solid rgba(70,125,132,.18)}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 0;font-size:.95rem;font-weight:500;line-height:1.4;color:var(--ink);border-radius:6px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";margin-left:auto;flex:none;font-size:1.3rem;font-weight:400;line-height:1;color:var(--sage-text)}
+.faq details[open] summary::after{content:"\2013"}
+.faq summary:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+.faq details p{font-size:.9rem;line-height:1.65;color:#4d5a55;padding:0 0 14px}
+.sec svg.hb{margin-bottom:16px}
+@media (min-width:1600px){.sec.wide{margin-left:calc(50% - 495px);margin-right:calc(50% - 495px)}.sec .intro,.card.solo{max-width:585px}.faq{max-width:630px}}
+
+/* Green variant: full-width soft section bands, lighter down the page. */
+:root{--b-hero:#DCE8D6;--b-about:#E6EFE1;--b-svc:#EEF3E8;--b-expect:#FAF5EC;--b-team:#E8F0E3;--b-faq:#FAF5EC;--b-join:#E3EDDD}
+html,body{background:var(--cream)}
+body{overflow-x:clip}
+.band{position:relative;padding:44px 0;background:var(--bg);box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax)}
+.band>:first-child{margin-top:0}
+.b-hero{--bg:var(--b-hero);padding-top:0;padding-bottom:48px;clip-path:inset(-100vmax -100vmax 0 -100vmax)}
+.b-about{--bg:var(--b-about)}.b-svc{--bg:var(--b-svc)}.b-expect{--bg:var(--b-expect)}.b-team{--bg:var(--b-team)}.b-faq{--bg:var(--b-faq)}.b-join{--bg:var(--b-join)}
+.band .about,.band .sec,.band .cta{margin-top:0;padding-top:0}
+.b-join + *{margin-top:0}
+footer{margin-top:40px}
+h1{background:linear-gradient(90deg,#3D6D74,#3F6E2A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.call-top{position:relative}
+.b-hero .badge{background:rgba(255,255,255,.55)}
+.signup [data-element="disclaimer"]{opacity:.85!important}
+.card,.faq,.pillar{background:rgba(255,255,255,.85)}
+.signup form[data-uid]{background:rgba(255,255,255,.85)!important}
 </style>
 </head>
 <body>
 <a class="call-top" href="tel:+16029052222" aria-label="Call main line (602) 905-2222"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3M6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9m8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475zm0 0"/></svg><span>Call (602) 905-2222</span></a>
 <main>
+<div class="band b-hero">
   <picture>
   <source type="image/webp" srcset="logo.webp?v=7">
   <img class="logo" src="logo.png?v=7" width="561" height="600" fetchpriority="high" alt="Kui Lipa Health, Family Care">
@@ -235,6 +281,8 @@ svg.hb.hb-b{opacity:.85}
     <div class="pillar"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg>LGBTQ+ friendly, always</div>
     <div class="pillar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Unhurried visits, every&nbsp;time</div>
   </div>
+</div>
+<div class="band b-about">
   <div class="about fade d5">
     <svg class="hb hb-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 16" width="52" height="16" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="hb-fade-name" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#467D84"/><stop offset="1" stop-color="#60923C"/></linearGradient></defs><path stroke="url(#hb-fade-name)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 9 H16 L18.2 6.4 L20 9 L22.3 13.6 L26 2.2 L29.7 13.6 L32 9 L33.8 6.4 L35.6 9 H50.5"/></svg>
     <h2 class="label">Our name</h2>
@@ -246,6 +294,39 @@ svg.hb.hb-b{opacity:.85}
     <h2 class="label second">Our vision</h2>
     <p class="statement vision"><em>Like the shade of the mesquite and the linden,</em> we offer comfort when life feels heavy, safety to be yourself, and a welcome for whoever you call family.</p>
   </div>
+
+</div>
+<div class="band b-svc">
+  <section class="sec wide" id="services" aria-labelledby="services-h">
+    <svg class="hb hb-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 16" width="52" height="16" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="hb-fade-services" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#467D84"/><stop offset="1" stop-color="#60923C"/></linearGradient></defs><path stroke="url(#hb-fade-services)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 9 H16 L18.2 6.4 L20 9 L22.3 13.6 L26 2.2 L29.7 13.6 L32 9 L33.8 6.4 L35.6 9 H50.5"/></svg>
+    <h2 class="label" id="services-h">Services</h2>
+    <p class="intro">Everyday care for every member of your family, every age, every stage.</p>
+    <div class="cards three"><div class="card"><h3>Wellness visits &amp; physicals</h3><p>Yearly checkups, preventive screenings and health planning for adults.</p></div><div class="card"><h3>Well-child &amp; sports physicals</h3><p>Growth checks, school forms and sports physicals for kids and teens.</p></div><div class="card"><h3>Sick visits</h3><p>Care for colds, flu, infections, rashes and minor injuries.</p></div><div class="card"><h3>Ongoing condition care</h3><p>Help managing diabetes, high blood pressure, asthma, thyroid conditions and more.</p></div><div class="card"><h3>Vaccines</h3><p>Routine childhood and adult immunizations, including seasonal flu shots.</p></div><div class="card"><h3>LGBTQ+ affirming care</h3><p>Primary care that respects who you are, including sexual health and PrEP.</p></div><div class="card"><h3>Mental health check-ins</h3><p>Screening for depression and anxiety, with referrals to trusted counselors.</p></div><div class="card"><h3>Care navigation</h3><p>Help with referrals, specialists and insurance questions, so you’re never left to figure it out alone.</p></div><div class="card"><h3>Telehealth</h3><p>Video visits for follow-ups and questions that don’t need an exam room.</p></div></div>
+    <p class="note">These are the services we plan to offer. We’ll confirm the final list before opening.</p>
+  </section>
+</div>
+<div class="band b-expect">
+  <section class="sec wide" id="expect" aria-labelledby="expect-h">
+    <svg class="hb hb-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 16" width="52" height="16" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="hb-fade-expect" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#467D84"/><stop offset="1" stop-color="#60923C"/></linearGradient></defs><path stroke="url(#hb-fade-expect)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 9 H16 L18.2 6.4 L20 9 L22.3 13.6 L26 2.2 L29.7 13.6 L32 9 L33.8 6.4 L35.6 9 H50.5"/></svg>
+    <h2 class="label" id="expect-h">What to expect when we open</h2>
+    <div class="cards facts"><div class="card"><h3>Insurance &amp; self-pay</h3><p>We plan to accept insurance and offer clear self-pay pricing. We’ll list the accepted plans and prices before opening.</p></div><div class="card"><h3>Location</h3><p>Greater Phoenix. We’ll share the exact address with our email list first.</p></div><div class="card"><h3>Opening</h3><p>We’re planning to open in 2027. People on our email list hear first when appointments open.</p></div><div class="card"><h3>Language</h3><p>Visits are in English.</p></div></div>
+  </section>
+</div>
+<div class="band b-team">
+  <section class="sec" id="team" aria-labelledby="team-h">
+    <svg class="hb hb-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 16" width="52" height="16" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="hb-fade-team" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#467D84"/><stop offset="1" stop-color="#60923C"/></linearGradient></defs><path stroke="url(#hb-fade-team)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 9 H16 L18.2 6.4 L20 9 L22.3 13.6 L26 2.2 L29.7 13.6 L32 9 L33.8 6.4 L35.6 9 H50.5"/></svg>
+    <h2 class="label" id="team-h">Your care team</h2>
+    <div class="card solo"><p>Kui Lipa Health will be led by a board-certified family nurse practitioner with a background in patient navigation: helping people find their way through a health system that can be confusing and hard to reach.</p><p>Expect a provider who knows you by name and makes time for your questions.</p></div>
+  </section>
+</div>
+<div class="band b-faq">
+  <section class="sec" id="faq" aria-labelledby="faq-h">
+    <svg class="hb hb-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 16" width="52" height="16" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="hb-fade-faq" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#467D84"/><stop offset="1" stop-color="#60923C"/></linearGradient></defs><path stroke="url(#hb-fade-faq)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 9 H16 L18.2 6.4 L20 9 L22.3 13.6 L26 2.2 L29.7 13.6 L32 9 L33.8 6.4 L35.6 9 H50.5"/></svg>
+    <h2 class="label" id="faq-h">Questions</h2>
+    <div class="faq"><details><summary>When will you open?</summary><p>We’re planning to open in 2027. Sign up below and we’ll email you as soon as appointments are available.</p></details><details><summary>Do you take insurance?</summary><p>Yes. We plan to accept insurance and offer self-pay pricing. We’ll share the list of accepted plans before opening.</p></details><details><summary>Where will you be located?</summary><p>In Greater Phoenix. We’ll share the exact address with our email list first.</p></details><details><summary>Who can be a patient?</summary><p>Everyone. We care for people of all ages, backgrounds, identities and family structures.</p></details><details><summary>Do I have to be LGBTQ+ to be a patient?</summary><p>Not at all. Being LGBTQ+ friendly means everyone is welcome and respected here, whoever you are.</p></details><details><summary>What is a family nurse practitioner?</summary><p>A family nurse practitioner (FNP) is an advanced practice nurse trained to care for patients of all ages. In Arizona, nurse practitioners can examine and diagnose patients, order tests and prescribe medications without physician supervision.</p></details></div>
+  </section>
+</div>
+<div class="band b-join">
   <div class="cta fade d6">
     <div class="follow" aria-hidden="true"><svg class="hb hb-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 16" width="52" height="16" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="hb-fade-signup" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#467D84"/><stop offset="1" stop-color="#60923C"/></linearGradient></defs><path stroke="url(#hb-fade-signup)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1.5 9 H16 L18.2 6.4 L20 9 L22.3 13.6 L26 2.2 L29.7 13.6 L32 9 L33.8 6.4 L35.6 9 H50.5"/></svg></div>
     <div class="signup"><script async data-uid="178e2e948c" src="https://kui-lipa-health.kit.com/178e2e948c/index.js"></script></div>
@@ -258,6 +339,7 @@ svg.hb.hb-b{opacity:.85}
     <a href="mailto:hello@kuilipahealth.com" aria-label="Email hello@kuilipahealth.com"><span class="ic"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="lbl">Email</span></a>
     </nav>
   </div>
+</div>
 </main>
 <footer><nav class="phones" aria-label="Phone and fax"><a href="tel:+16029052222" aria-label="Call main line (602) 905-2222"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3M6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9m8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475zm0 0"/></svg><span class="kind">Main</span> <span class="num">(602) 905-2222</span></a><a href="tel:+16029057777" aria-label="Fax (602) 905-7777"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 21q-1.25 0-2.125-.875T2 18v-7q0-1.25.875-2.125T5 8q.675 0 1.238.275T7.225 9H8V4h10v5h1q1.25 0 2.125.875T22 12v8H7.225q-.425.45-.987.725T5 21m0-2q.425 0 .713-.288T6 18v-7q0-.425-.288-.712T5 10t-.712.288T4 11v7q0 .425.288.713T5 19m5-10h6V6h-6zm-2 9h12v-6q0-.425-.288-.712T19 11H8zm7.713-4.288Q16 13.425 16 13t-.288-.712T15 12t-.712.288T14 13t.288.713T15 14t.713-.288m3 0Q19 13.426 19 13t-.288-.712T18 12t-.712.288T17 13t.288.713T18 14t.713-.288m-3 3Q16 16.426 16 16t-.288-.712T15 15t-.712.288T14 16t.288.713T15 17t.713-.288m3 0Q19 16.426 19 16t-.288-.712T18 15t-.712.288T17 16t.288.713T18 17t.713-.288M9 17h4v-5H9zm-1 1v-7z"/></svg><span class="kind">Fax</span> <span class="num">(602) 905-7777</span></a></nav><p>&copy; <span id="yr">2026</span> Kui Lipa Health &middot; Phoenix, Arizona &middot; <a href="privacy.html">Privacy</a></p></footer>
 <script>

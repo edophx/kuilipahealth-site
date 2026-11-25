@@ -36,6 +36,8 @@ h1,h2.serif,.serif,h3{font-family:Literata,Georgia,serif;font-weight:600;color:v
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid transparent;white-space:nowrap;transition:background .2s,transform .2s,border-color .2s}
 .btn svg{width:18px;height:18px;flex:none}
+.btn .callw{font-weight:700}
+.btn .callnum{font-weight:500;margin-left:.4em;font-variant-numeric:tabular-nums}
 .btn.gold{background:var(--gold);color:var(--ink)}
 .btn.gold:hover,.btn.gold:focus-visible{background:var(--gold2);transform:translateY(-1px)}
 .btn.ghost{border-color:rgba(244,236,218,.7);color:var(--cream);background:transparent}
@@ -89,8 +91,8 @@ h1,h2.serif,.serif,h3{font-family:Literata,Georgia,serif;font-weight:600;color:v
 .trees{display:grid;gap:14px}
 .tree{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
 .tree .ic{width:96px;height:96px;flex:none;border-radius:50%;background:#F4ECDA;border:2px solid var(--gold);box-shadow:0 6px 18px rgba(0,0,0,.22);display:grid;place-items:center}
-.tree .ic img{display:block;height:76px;width:auto}
-@media (max-width:374px){.tree{gap:12px;padding:16px}.tree .ic{width:80px;height:80px}.tree .ic img{height:62px}}
+.tree .ic img{display:block;height:82px;width:auto}
+@media (max-width:374px){.tree{gap:12px;padding:16px}.tree .ic{width:80px;height:80px}.tree .ic img{height:68px}}
 .tree p{color:var(--text);line-height:1.5}
 .tree p strong{display:block;font-family:Literata,Georgia,serif;font-size:1.6rem;font-weight:600;color:var(--cream);line-height:1.15;margin-bottom:2px}
 .tree.two{background:transparent;border-style:dashed}
@@ -154,8 +156,8 @@ footer{background:var(--foot);border-top:1px solid var(--line);padding:56px 0 ca
 .fcol p{margin-top:12px;color:var(--muted)}
 footer .phones{display:grid;grid-template-columns:max-content;gap:10px;justify-content:start}
 @media (max-width:759px){footer .phones{justify-content:center}}
-footer .phones a{display:grid;grid-template-columns:18px 3.2em auto;align-items:center;column-gap:10px;height:46px;padding:0 20px;border-radius:999px;text-decoration:none;color:var(--cream);background:rgba(244,236,218,.06);border:1px solid rgba(244,236,218,.35);white-space:nowrap;transition:all .2s}
-footer .phones .kind{display:block;text-align:left}
+footer .phones a{display:grid;grid-template-columns:18px 2.6em auto;align-items:center;column-gap:9px;height:46px;padding:0 20px;border-radius:999px;text-decoration:none;color:var(--cream);background:rgba(244,236,218,.06);border:1px solid rgba(244,236,218,.35);white-space:nowrap;transition:all .2s}
+footer .phones .kind{display:block;text-align:right}
 footer .phones .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
 footer .phones a:hover,footer .phones a:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 footer .phones svg{width:18px;height:18px;flex:none}

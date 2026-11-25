@@ -21,8 +21,8 @@
 
 :root{--a:#1F3A30;--b:#24423A;--c:#1C352C;--foot:#172D25;--cream:#FBF5E8;--soft:#E6E0D0;--text:var(--soft);--muted:var(--soft);--gold:#E8B33A;--gold2:#F1C55E;--line:rgba(244,236,218,.16);--card:rgba(255,255,255,.05);--ink:#1C352C;color-scheme:dark}
 *{box-sizing:border-box;margin:0;padding:0;min-width:0}
-html{background:var(--a);scroll-behavior:smooth;scroll-padding-top:104px}
-@media (max-width:1023px){html{scroll-padding-top:138px}}
+html{background:var(--a);scroll-behavior:smooth;scroll-padding-top:6.6rem}
+@media (max-width:1179px){html{scroll-padding-top:8.8rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{font-family:Poppins,system-ui,sans-serif;color:var(--text);background:var(--a);line-height:1.65;font-size:1rem;overflow-x:clip}
 a{color:inherit}
@@ -37,6 +37,7 @@ h1,h2.serif,.serif,h3{font-family:Literata,Georgia,serif;font-weight:600;color:v
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid transparent;white-space:nowrap;transition:background .2s,transform .2s,border-color .2s}
 .btn svg{width:18px;height:18px;flex:none}
 .btn .callw{font-weight:700}
+.team .role,#team .role{display:block;text-wrap:balance}
 .btn .callnum{font-weight:500;margin-left:.4em;font-variant-numeric:tabular-nums}
 .btn.gold{background:var(--gold);color:var(--ink)}
 .btn.gold:hover,.btn.gold:focus-visible{background:var(--gold2);transform:translateY(-1px)}
@@ -44,10 +45,17 @@ h1,h2.serif,.serif,h3{font-family:Literata,Georgia,serif;font-weight:600;color:v
 .btn.ghost:hover,.btn.ghost:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink)}
 /* header */
 .site{position:sticky;top:0;z-index:30;background:rgba(28,53,44,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:16px;max-width:1240px;margin:0 auto;padding:6px max(4vw,16px)}
+.bar{display:flex;align-items:center;gap:16px;max-width:1240px;margin:0 auto;padding:6px clamp(16px,4vw,40px)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;color:var(--cream);min-height:44px}
-.brand img{height:76px;width:auto;display:block}
-@media (max-width:1023px){.brand img{height:66px}}
+.brand img{height:68px;width:auto;display:block;flex:none}
+.brand .bname{display:flex;flex-direction:column;justify-content:center;gap:3px;white-space:nowrap}
+.brand .bname b{font-family:Poppins,system-ui,sans-serif;font-weight:600;font-size:1.6rem;line-height:1.05;letter-spacing:.005em;color:var(--cream)}
+.brand .bname small{font-family:Poppins,system-ui,sans-serif;font-weight:700;font-size:.8rem;line-height:1.1;letter-spacing:.26em;text-transform:uppercase;color:#F1BA3C}
+.brand:hover .bname b,.brand:focus-visible .bname b{color:var(--gold)}
+.skip{position:fixed;left:12px;top:10px;z-index:100;padding:10px 18px;border-radius:999px;background:var(--gold);color:var(--ink);font-weight:600;font-size:.95rem;text-decoration:none;transform:translateY(-160%);opacity:0;transition:transform .15s,opacity .15s}
+.skip:focus,.skip:focus-visible{transform:none;opacity:1;outline:2px solid var(--cream);outline-offset:3px}
+main:focus{outline:none}
+@media (max-width:1179px){.brand img{height:54px}.brand .bname b{font-size:1.3rem}.brand .bname small{font-size:.68rem;letter-spacing:.22em}}
 .brand b{display:block;font-family:Literata,Georgia,serif;font-size:1.15rem;font-weight:600;line-height:1.1}
 .brand small{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.3}
 .links{display:flex;align-items:center;gap:2px;list-style:none}
@@ -56,14 +64,14 @@ h1,h2.serif,.serif,h3{font-family:Literata,Georgia,serif;font-weight:600;color:v
 .links a[aria-current="page"]{color:var(--gold);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
 .links a:focus-visible{outline-offset:-2px}
 .bar .btn{min-height:44px;padding:0 18px;font-size:.9rem}
-@media (max-width:1023px){
+@media (max-width:1179px){
  .bar{flex-wrap:wrap;row-gap:4px;padding-bottom:4px}
- .bar>nav{order:3;flex:0 0 calc(100% + 2*max(4vw,16px));margin:0 calc(-1*max(4vw,16px))}
- .links{padding:0 max(4vw,16px) 4px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 22px),transparent)}
+ .bar>nav{order:3;flex:0 0 calc(100% + 2*clamp(16px,4vw,40px));margin:0 calc(-1*clamp(16px,4vw,40px))}
+ .links{padding:0 clamp(16px,4vw,40px) 4px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 22px),transparent)}
  .links::-webkit-scrollbar{display:none}
  .links li{flex:none}
 }
-@media (max-width:374px){.bar{gap:10px}.brand img{height:60px}.bar .btn{padding:0 14px;font-size:.85rem}}
+@media (max-width:374px){.bar{gap:10px}.brand img{height:42px}.brand{gap:8px}.brand .bname b{font-size:1.02rem}.brand .bname small{font-size:.58rem;letter-spacing:.18em}.bar .btn{padding:0 14px;font-size:.85rem}}
 /* hero */
 .hero{overflow:hidden;background:radial-gradient(70vmax 50vmax at 85% 20%,rgba(232,179,58,.07),transparent 60%),var(--a)}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center}
@@ -156,11 +164,14 @@ footer{background:var(--foot);border-top:1px solid var(--line);padding:56px 0 ca
 .fcol p{margin-top:12px;color:var(--muted)}
 footer .phones{display:grid;grid-template-columns:max-content;gap:10px;justify-content:start}
 @media (max-width:759px){footer .phones{justify-content:center}}
-footer .phones a{display:grid;grid-template-columns:18px 2.6em auto;align-items:center;column-gap:9px;height:46px;padding:0 20px;border-radius:999px;text-decoration:none;color:var(--cream);background:rgba(244,236,218,.06);border:1px solid rgba(244,236,218,.35);white-space:nowrap;transition:all .2s}
-footer .phones .kind{display:block;text-align:right}
-footer .phones .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+footer .phones a,footer .phones .pill{display:grid;grid-template-columns:18px 2.9em 12.4em;justify-content:center;align-items:center;column-gap:9px;min-height:46px;padding:0 20px;border-radius:999px;text-decoration:none;color:var(--cream);background:rgba(244,236,218,.06);border:1px solid rgba(244,236,218,.35);white-space:nowrap;transition:all .2s}
+footer .phones .kind{display:block;text-align:left!important;justify-self:start}
+footer .phones a,footer .phones .pill{text-align:left}
+footer .phones .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1;min-width:0}
+footer .phones .num.mail{font-variant-numeric:normal;font-feature-settings:normal}
+@media (max-width:374px){footer .phones a,footer .phones .pill{font-size:.82rem;padding:0 16px}footer .phones .num.mail{white-space:normal;overflow-wrap:anywhere}}
 footer .phones a:hover,footer .phones a:focus-visible{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-footer .phones svg{width:18px;height:18px;flex:none}
+footer .phones svg{display:block;width:18px;height:18px;flex:none;justify-self:center}
 footer .phones .kind{font-weight:600}
 .flinks{list-style:none;display:grid;gap:4px}
 .flinks a{display:inline-flex;align-items:center;min-height:44px;color:var(--cream);font-weight:400;text-decoration:none;transition:color .2s}
@@ -170,6 +181,7 @@ footer .phones .kind{font-weight:600}
 .legal a{display:inline-block;padding:10px 4px;color:inherit;font-weight:400!important;text-decoration:none!important}
 .legal a:hover,.legal a:focus-visible{color:var(--gold)}
 @media (min-width:1600px){html{font-size:112.5%}}
+@media (min-width:1600px){.bar{max-width:1340px}}
 /* ---------- Kit form, dark (same selectors as the live site) ---------- */
 .signup .formkit-form{margin:0 auto!important;max-width:100%!important;min-width:0!important;width:100%!important;font-family:Poppins,system-ui,sans-serif!important;background:rgba(255,255,255,.05)!important;border:1px solid rgba(244,236,218,.18);border-radius:20px!important}
 .signup .formkit-background{display:none!important}
@@ -222,8 +234,9 @@ footer .phones .kind{font-weight:600}
 </head>
 <body>
 <!-- Plain-language summary. Not legal advice; recommend review by counsel before the practice sees patients. -->
-<header class="site"><div class="bar"><a class="brand" href="index.html" title="Kui Lipa Health home"><picture><source type="image/webp" srcset="logo-dark.webp?v=4"><img src="logo-dark.png?v=4" width="420" height="459" alt="Kui Lipa Health, Family Care"></picture></a><nav aria-label="Main"><ul class="links"><li><a href="index.html#our-name">Our name</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#team">Care team</a></li><li><a href="index.html#expect">What to expect</a></li><li><a href="index.html#faq">Questions</a></li><li><a href="our-story.html">Our founders’ story</a></li></ul></nav><a class="btn gold" href="index.html#signup">Notify me</a></div></header>
-<main id="top">
+<a class="skip" href="#top">Skip to content</a>
+<header class="site"><div class="bar"><a class="brand" href="index.html" aria-label="Kui Lipa Health, Family Care, home"><picture><source type="image/webp" srcset="logo-emblem.webp?v=1"><img src="logo-emblem.png?v=1" width="194" height="184" alt=""></picture><span class="bname"><b>Kui Lipa Health</b><small>Family Care</small></span></a><nav aria-label="Main"><ul class="links"><li><a href="index.html#our-name">Our name</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#team">Care team</a></li><li><a href="index.html#expect">What to expect</a></li><li><a href="index.html#faq">Questions</a></li><li><a href="our-story.html">Our founders’ story</a></li></ul></nav><a class="btn gold" href="index.html#signup">Notify me</a></div></header>
+<main id="top" tabindex="-1">
 <section class="band a" aria-labelledby="privacy-h"><div class="wrap legaldoc">
 <h1 id="privacy-h">Privacy Policy</h1>
   <p class="eff">Effective November 20, 2026</p>
@@ -264,7 +277,7 @@ footer .phones .kind{font-weight:600}
 </main>
 <footer><div class="wrap"><div class="fcols">
 <div class="fcol"><a class="flogo" href="index.html" aria-label="Kui Lipa Health home"><picture><source type="image/webp" srcset="logo-dark.webp?v=4"><img src="logo-dark.png?v=4" width="420" height="459" loading="lazy" alt="Kui Lipa Health, Family Care"></picture></a></div>
-<div class="fcol"><nav class="phones" aria-label="Phone and fax"><a href="tel:+16029052222" aria-label="Call main line (602) 905-2222"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3M6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9m8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475zm0 0"/></svg><span class="kind">Main</span> <span class="num">(602) 905-2222</span></a><a href="tel:+16029057777" aria-label="Fax (602) 905-7777"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 21q-1.25 0-2.125-.875T2 18v-7q0-1.25.875-2.125T5 8q.675 0 1.238.275T7.225 9H8V4h10v5h1q1.25 0 2.125.875T22 12v8H7.225q-.425.45-.987.725T5 21m0-2q.425 0 .713-.288T6 18v-7q0-.425-.288-.712T5 10t-.712.288T4 11v7q0 .425.288.713T5 19m5-10h6V6h-6zm-2 9h12v-6q0-.425-.288-.712T19 11H8zm7.713-4.288Q16 13.425 16 13t-.288-.712T15 12t-.712.288T14 13t.288.713T15 14t.713-.288m3 0Q19 13.426 19 13t-.288-.712T18 12t-.712.288T17 13t.288.713T18 14t.713-.288m-3 3Q16 16.426 16 16t-.288-.712T15 15t-.712.288T14 16t.288.713T15 17t.713-.288m3 0Q19 16.426 19 16t-.288-.712T18 15t-.712.288T17 16t.288.713T18 17t.713-.288M9 17h4v-5H9zm-1 1v-7z"/></svg><span class="kind">Fax</span> <span class="num">(602) 905-7777</span></a></nav><ul class="flinks"><li><a href="mailto:hello@kuilipahealth.com">hello@kuilipahealth.com</a></li></ul></div>
+<div class="fcol"><div class="phones" role="group" aria-label="Phone, fax and email"><a href="tel:+16029052222" aria-label="Call main line (602) 905-2222"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3M6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9m8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475zm0 0"/></svg><span class="kind">Main</span> <span class="num">(602) 905-2222</span></a><span class="pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5 21q-1.25 0-2.125-.875T2 18v-7q0-1.25.875-2.125T5 8q.675 0 1.238.275T7.225 9H8V4h10v5h1q1.25 0 2.125.875T22 12v8H7.225q-.425.45-.987.725T5 21m0-2q.425 0 .713-.288T6 18v-7q0-.425-.288-.712T5 10t-.712.288T4 11v7q0 .425.288.713T5 19m5-10h6V6h-6zm-2 9h12v-6q0-.425-.288-.712T19 11H8zm7.713-4.288Q16 13.425 16 13t-.288-.712T15 12t-.712.288T14 13t.288.713T15 14t.713-.288m3 0Q19 13.426 19 13t-.288-.712T18 12t-.712.288T17 13t.288.713T18 14t.713-.288m-3 3Q16 16.426 16 16t-.288-.712T15 15t-.712.288T14 16t.288.713T15 17t.713-.288m3 0Q19 16.426 19 16t-.288-.712T18 15t-.712.288T17 16t.288.713T18 17t.713-.288M9 17h4v-5H9zm-1 1v-7z"/></svg><span class="kind">Fax</span> <span class="num">(602) 905-7777</span></span><a href="mailto:hello@kuilipahealth.com" aria-label="Email hello@kuilipahealth.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z"/></svg><span class="kind">Email</span> <span class="num mail">hello@kuilipahealth.com</span></a></div></div>
 <nav class="fcol" aria-label="Footer"><ul class="flinks pages"><li><a href="index.html#our-name">Our name</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#team">Care team</a></li><li><a href="index.html#expect">What to expect</a></li><li><a href="index.html#faq">Questions</a></li><li><a href="our-story.html">Our founders’ story</a></li><li><a href="privacy.html">Privacy</a></li></ul></nav>
 </div>
 <p class="legal">&copy; <span id="yr">2026</span> Kui Lipa Health &middot; Phoenix, Arizona &middot; <a href="privacy.html">Privacy</a></p></div></footer>

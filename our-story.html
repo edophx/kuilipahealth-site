@@ -126,19 +126,34 @@ main:focus{outline:none}
 .tree.two p strong{font-size:1.15rem}
 /* cards */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+@media (min-width:560px){.grid>.card:last-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(14rem,auto) minmax(0,1fr);gap:8px 32px;align-items:center;padding:22px 28px}}
+@media (min-width:560px) and (max-width:899px){.grid>.card:nth-last-child(2){grid-column:1/-1}}
+.grid>.card:last-child{position:relative}
+.grid>.card:last-child::before{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;background:var(--gold);border-radius:0 0 2px 2px}
 @media (max-width:899px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:559px){.grid{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
 .card h3{font-size:1.15rem;margin-bottom:8px;color:var(--cream)}
 .card p{color:var(--soft);font-size:.95rem;line-height:1.6}
+.card .disc{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:.8rem;line-height:1.55;color:#C9C3B4}
+@media (min-width:560px){.grid>.card:last-child .disc{grid-column:1/-1;margin-top:8px}}
 .note{margin:22px auto 0;font-size:.86rem;color:var(--soft);text-align:center;text-wrap:balance;max-width:60ch}
 .secintro{margin-top:4px}
 /* team */
-.team .wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
-@media (max-width:759px){.team .wrap{grid-template-columns:1fr}.team .photo{max-width:300px;margin:0 auto}}
-.photo{position:relative;border-radius:28px;overflow:hidden;line-height:0;background:#F4ECDA;box-shadow:0 18px 40px rgba(0,0,0,.32)}
+.team .wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:clamp(28px,5vw,64px);align-items:start}
+.team .wrap>.label{grid-column:1/-1;margin:0 0 24px}
+.team-copy{min-width:0}
+.team-rule{grid-column:1/-1;border:0;border-top:1px solid var(--line);margin:48px 0 0;height:0}
+.team .ph,.team .injector{margin-top:36px}
+@media (max-width:759px){.team .wrap{grid-template-columns:1fr}.team .photo,.team .ph{max-width:300px;margin-left:auto;margin-right:auto}.team .ph,.team .team-copy{margin-top:36px}}
+.photo,.ph{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.32);max-width:300px;width:100%}
+.photo{line-height:0;background:#F4ECDA}
 .photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
-.photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(244,236,218,.35);pointer-events:none}
+.photo::after,.ph::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(244,236,218,.35);pointer-events:none}
+.ph{aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:22px 18px;box-sizing:border-box;background:linear-gradient(180deg,#D5E0D6,#C5D4C6)}
+.ph picture{display:block;width:64%}
+.ph img{display:block;width:100%;height:auto}
+.ph span{font-weight:500;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-align:center;line-height:1.35}
 .team h3{font-size:clamp(1.5rem,3vw,2.1rem);margin:6px 0 16px}
 .team p.txt{max-width:60ch}
 /* expect */
@@ -258,7 +273,7 @@ footer .phones .kind{font-weight:600}
 <h1 id="story-h">Our founders’ story</h1>
 </div></section>
 <section class="band b" aria-label="How we met"><div class="wrap">
-<div class="storycard"><p>On October 3, 2021, Edo and Devin met in Phoenix and felt at home with each other from the start. Edo had been down the aisle once before and wasn’t planning a return trip. Yet the man who said “never” was the one who asked, “Will you marry me?” On October 3, 2024, three years to the day after they met, they said “I do.”</p><p>Blending a family together taught them what it means to be accepted exactly as you are. Now they’re building Kui Lipa Health side by side, to pass that welcome on to every patient and every kind of family. Devin leads the care. He spent years in patient navigation and will complete his family nurse practitioner degree in 2027. Edo leads the business. He runs operations and brings more than 20 years of healthcare technology experience so every call and visit runs smoothly.</p><p>The name holds their story too: <em lang="ood">kui</em>, the mesquite of Devin’s Tohono Oʼodham homeland, and <em lang="bs">lipa</em>, the linden of Edo’s Bosnia.</p></div>
+<div class="storycard"><p>On October 3, 2021, Edo and Devin met in Phoenix and felt at home with each other from the start. Edo had been down the aisle once before and wasn’t planning a return trip. Yet the man who said “never” was the one who asked, “Will you marry me?” On October 3, 2024, three years to the day after they met, they said “I do.”</p><p>Blending a family together taught them what it means to be accepted exactly as you are. Now they’re building Kui Lipa Health side by side, to pass that welcome on to every patient and every kind of family. Devin leads the care. He spent years in patient navigation and will complete his family nurse practitioner degree in 2027. Edo leads the business as executive director, bringing more than 20 years of healthcare technology experience so every call and visit runs smoothly.</p><p>The name holds their story too: <em lang="ood">kui</em>, the mesquite of Devin’s Tohono Oʼodham homeland, and <em lang="bs">lipa</em>, the linden of Edo’s Bosnia.</p></div>
 </div></section>
 <section class="band a sname" aria-labelledby="sname-h"><div class="wrap">
 <div><h2 class="label" id="sname-h">Our name</h2><p class="big">Two trees from our founders’ homelands, rooted side by side.</p></div>

@@ -129,19 +129,34 @@ main:focus{outline:none}
 .tree.two p strong{font-size:1.15rem}
 /* cards */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+@media (min-width:560px){.grid>.card:last-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(14rem,auto) minmax(0,1fr);gap:8px 32px;align-items:center;padding:22px 28px}}
+@media (min-width:560px) and (max-width:899px){.grid>.card:nth-last-child(2){grid-column:1/-1}}
+.grid>.card:last-child{position:relative}
+.grid>.card:last-child::before{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;background:var(--gold);border-radius:0 0 2px 2px}
 @media (max-width:899px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:559px){.grid{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
 .card h3{font-size:1.15rem;margin-bottom:8px;color:var(--cream)}
 .card p{color:var(--soft);font-size:.95rem;line-height:1.6}
+.card .disc{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:.8rem;line-height:1.55;color:#C9C3B4}
+@media (min-width:560px){.grid>.card:last-child .disc{grid-column:1/-1;margin-top:8px}}
 .note{margin:22px auto 0;font-size:.86rem;color:var(--soft);text-align:center;text-wrap:balance;max-width:60ch}
 .secintro{margin-top:4px}
 /* team */
-.team .wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
-@media (max-width:759px){.team .wrap{grid-template-columns:1fr}.team .photo{max-width:300px;margin:0 auto}}
-.photo{position:relative;border-radius:28px;overflow:hidden;line-height:0;background:#F4ECDA;box-shadow:0 18px 40px rgba(0,0,0,.32)}
+.team .wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:clamp(28px,5vw,64px);align-items:start}
+.team .wrap>.label{grid-column:1/-1;margin:0 0 24px}
+.team-copy{min-width:0}
+.team-rule{grid-column:1/-1;border:0;border-top:1px solid var(--line);margin:48px 0 0;height:0}
+.team .ph,.team .injector{margin-top:36px}
+@media (max-width:759px){.team .wrap{grid-template-columns:1fr}.team .photo,.team .ph{max-width:300px;margin-left:auto;margin-right:auto}.team .ph,.team .team-copy{margin-top:36px}}
+.photo,.ph{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.32);max-width:300px;width:100%}
+.photo{line-height:0;background:#F4ECDA}
 .photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
-.photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(244,236,218,.35);pointer-events:none}
+.photo::after,.ph::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(244,236,218,.35);pointer-events:none}
+.ph{aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:22px 18px;box-sizing:border-box;background:linear-gradient(180deg,#D5E0D6,#C5D4C6)}
+.ph picture{display:block;width:64%}
+.ph img{display:block;width:100%;height:auto}
+.ph span{font-weight:500;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-align:center;line-height:1.35}
 .team h3{font-size:clamp(1.5rem,3vw,2.1rem);margin:6px 0 16px}
 .team p.txt{max-width:60ch}
 /* expect */
@@ -271,12 +286,16 @@ footer .phones .kind{font-weight:600}
 <section class="band a" id="services" aria-labelledby="services-h"><div class="wrap">
 <h2 class="label" id="services-h">Services</h2>
 <p class="big secintro">Everyday care for every member of your family, every age, every stage.</p>
-<div class="grid"><div class="card"><h3>Wellness visits &amp; physicals</h3><p>Yearly checkups, preventive screenings and health planning for adults.</p></div><div class="card"><h3>Well-child &amp; sports physicals</h3><p>Growth checks, school forms and sports physicals for kids and teens.</p></div><div class="card"><h3>Sick visits</h3><p>Care for colds, flu, infections, rashes and minor injuries.</p></div><div class="card"><h3>Ongoing condition care</h3><p>Help managing diabetes, high blood pressure, asthma, thyroid conditions and more.</p></div><div class="card"><h3>Vaccines</h3><p>Routine childhood and adult immunizations, including seasonal flu shots.</p></div><div class="card"><h3>LGBTQ+ affirming care</h3><p>Primary care that respects who you are, including sexual health and PrEP.</p></div><div class="card"><h3>Mental health check-ins</h3><p>Screening for depression and anxiety, with referrals to trusted counselors.</p></div><div class="card"><h3>Care navigation</h3><p>Help with referrals, specialists and insurance questions, so you’re never left to figure it out alone.</p></div><div class="card"><h3>Telehealth</h3><p>Video visits for follow-ups and questions that don’t need an exam room.</p></div></div>
+<div class="grid"><div class="card"><h3>Wellness visits &amp; physicals</h3><p>Yearly checkups, preventive screenings and health planning for adults.</p></div><div class="card"><h3>Well-child &amp; sports physicals</h3><p>Growth checks, school forms and sports physicals for kids and teens.</p></div><div class="card"><h3>Sick visits</h3><p>Care for colds, flu, infections, rashes and minor injuries.</p></div><div class="card"><h3>Ongoing condition care</h3><p>Help managing diabetes, high blood pressure, asthma, thyroid conditions and more.</p></div><div class="card"><h3>Vaccines</h3><p>Routine childhood and adult immunizations, including seasonal flu shots.</p></div><div class="card"><h3>LGBTQ+ affirming care</h3><p>Primary care that respects who you are, including sexual health and PrEP.</p></div><div class="card"><h3>Mental health check-ins</h3><p>Screening for depression and anxiety, with referrals to trusted counselors.</p></div><div class="card"><h3>Care navigation</h3><p>Help with referrals, specialists and insurance questions, so you’re never left to figure it out alone.</p></div><div class="card"><h3>Telehealth</h3><p>Video visits for follow-ups and questions that don’t need an exam room.</p></div><div class="card"><h3>Aesthetic injectables</h3><p>Wrinkle relaxers, dermal fillers, and collagen-boosting treatments, always starting with a consultation.</p><p class="disc">Aesthetic treatments at Kui Lipa Health are performed by a licensed registered nurse under the supervision of our nurse practitioner. A consultation is required before any treatment. Individual results vary.</p></div></div>
 <p class="note">These are the services we plan to offer. We’ll confirm the final list before opening.</p>
 </div></section>
 <section class="band b team" id="team" aria-labelledby="team-h"><div class="wrap">
-<picture class="photo"><source type="image/webp" srcset="devin-sage.webp?v=1 1x, devin-sage-2x.webp?v=1 2x"><img src="devin-sage.png?v=1" width="480" height="600" loading="lazy" decoding="async" alt="Devin Mujkanović, future family nurse practitioner"></picture>
-<div><h2 class="label" id="team-h">Your care team</h2><h3>Devin Mujkanović,<span class="role"> future family nurse practitioner</span></h3><p class="txt">Kui Lipa Health will be led by Devin Mujkanović, who is completing his family nurse practitioner degree in August 2027. Before nursing, Devin worked in patient navigation, making sure no one had to face a confusing health system on their own. That’s why care here feels personal. Expect a provider who knows you by name, remembers your story, and always makes time for your questions.</p></div>
+<h2 class="label" id="team-h">Your care team</h2>
+<picture class="photo"><source type="image/webp" srcset="devin-sage-v2.webp?v=1 1x, devin-sage-v2-2x.webp?v=1 2x"><img src="devin-sage-v2.png?v=1" width="480" height="600" loading="lazy" decoding="async" alt="Devin Mujkanović, future family nurse practitioner"></picture>
+<div class="team-copy"><h3>Devin Mujkanović,<span class="role"> future family nurse practitioner</span></h3><p class="txt">Kui Lipa Health will be led by Devin Mujkanović, who is completing his family nurse practitioner degree in August 2027. Before nursing, Devin worked in patient navigation, making sure no one had to face a confusing health system on their own. That’s why care here feels personal. Expect a provider who knows you by name, remembers your story, and always makes time for your questions. He’ll also oversee our aesthetic services.</p></div>
+<hr class="team-rule">
+<div class="ph" role="img" aria-label="Photo coming soon"><picture><source type="image/webp" srcset="logo-emblem-ph.webp?v=1"><img src="logo-emblem-ph.png?v=1" width="347" height="360" alt=""></picture><span>Photo coming soon</span></div>
+<div class="injector team-copy"><h3>Aesthetic Injector, BSN, RN<span class="role"> Joining after we open</span></h3><p class="txt">A Grand Canyon University graduate and registered nurse since 2022, our aesthetic injector brings charge and bedside nursing experience to every treatment. Certified through the National Laser Institute, she starts every visit with a careful assessment and an honest conversation about your goals. Expect natural-looking results that keep you looking like yourself, only refreshed.</p></div>
 </div></section>
 <section class="band c" id="expect" aria-labelledby="expect-h"><div class="wrap">
 <h2 class="label" id="expect-h">What to expect when we open</h2>
@@ -298,7 +317,7 @@ footer .phones .kind{font-weight:600}
 </div></section>
 <section class="band a" id="faq" aria-labelledby="faq-h"><div class="wrap faqwrap">
 <h2 class="label" id="faq-h">Questions</h2>
-<div class="faq"><details><summary>When will you open?</summary><p>We’re planning to open in 2027. Sign up below and we’ll email you as soon as appointments are available.</p></details><details><summary>Do you take insurance?</summary><p>Yes. We plan to accept insurance and offer self-pay pricing. We’ll share the list of accepted plans before opening.</p></details><details><summary>Where will you be located?</summary><p>In Greater Phoenix. We’ll share the exact address with our email list first.</p></details><details><summary>Who can be a patient?</summary><p>Everyone. We care for people of all ages, backgrounds, identities and family structures.</p></details><details><summary>Do I have to be LGBTQ+ to be a patient?</summary><p>Not at all. Being LGBTQ+ affirming means everyone is welcome and respected here, whoever you are.</p></details><details><summary>What is a family nurse practitioner?</summary><p>A family nurse practitioner (FNP) is an advanced practice nurse trained to care for patients of all ages. In Arizona, nurse practitioners can examine and diagnose patients, order tests and prescribe medications without physician supervision.</p></details></div>
+<div class="faq"><details><summary>When will you open?</summary><p>We’re planning to open in 2027. Sign up below and we’ll email you as soon as appointments are available.</p></details><details><summary>Do you take insurance?</summary><p>Yes. We plan to accept insurance and offer self-pay pricing. We’ll share the list of accepted plans before opening.</p></details><details><summary>Where will you be located?</summary><p>In Greater Phoenix. We’ll share the exact address with our email list first.</p></details><details><summary>Who can be a patient?</summary><p>Everyone. We care for people of all ages, backgrounds, identities and family structures.</p></details><details><summary>Do I have to be LGBTQ+ to be a patient?</summary><p>Not at all. Being LGBTQ+ affirming means everyone is welcome and respected here, whoever you are.</p></details><details><summary>What is a family nurse practitioner?</summary><p>A family nurse practitioner (FNP) is an advanced practice nurse trained to care for patients of all ages. In Arizona, nurse practitioners can examine and diagnose patients, order tests and prescribe medications without physician supervision.</p></details><details><summary>Will you offer aesthetic services?</summary><p>Yes, after we open in 2027. Treatments are performed by a licensed registered nurse under the supervision of our nurse practitioner, and a consultation is required first. Pricing will be shared at your consultation. Individual results vary.</p></details></div>
 </div></section>
 </main>
 <footer><div class="wrap"><div class="fcols">

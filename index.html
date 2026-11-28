@@ -137,8 +137,9 @@ main:focus{outline:none}
 .note{margin:22px auto 0;font-size:.86rem;color:var(--soft);text-align:center;text-wrap:balance;max-width:60ch}
 .secintro{margin-top:4px}
 /* team */
-.team .wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
-@media (max-width:759px){.team .wrap{grid-template-columns:1fr}.team .photo{max-width:300px;margin:0 auto}}
+.team .wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:clamp(28px,5vw,64px);align-items:center}
+.team .wrap>.label{grid-column:1/-1;margin:0 0 24px}
+@media (max-width:759px){.team .wrap{grid-template-columns:1fr}.team .photo{max-width:300px;margin:0 auto}.team .wrap>div{margin-top:18px}}
 .photo{position:relative;border-radius:28px;overflow:hidden;line-height:0;background:#F4ECDA;box-shadow:0 18px 40px rgba(0,0,0,.32)}
 .photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(244,236,218,.35);pointer-events:none}
@@ -275,8 +276,9 @@ footer .phones .kind{font-weight:600}
 <p class="note">These are the services we plan to offer. We’ll confirm the final list before opening.</p>
 </div></section>
 <section class="band b team" id="team" aria-labelledby="team-h"><div class="wrap">
+<h2 class="label" id="team-h">Your care team</h2>
 <picture class="photo"><source type="image/webp" srcset="devin-sage.webp?v=1 1x, devin-sage-2x.webp?v=1 2x"><img src="devin-sage.png?v=1" width="480" height="600" loading="lazy" decoding="async" alt="Devin Mujkanović, future family nurse practitioner"></picture>
-<div><h2 class="label" id="team-h">Your care team</h2><h3>Devin Mujkanović,<span class="role"> future family nurse practitioner</span></h3><p class="txt">Kui Lipa Health will be led by Devin Mujkanović, who is completing his family nurse practitioner degree in August 2027. Before nursing, Devin worked in patient navigation, making sure no one had to face a confusing health system on their own. That’s why care here feels personal. Expect a provider who knows you by name, remembers your story, and always makes time for your questions.</p></div>
+<div><h3>Devin Mujkanović,<span class="role"> future family nurse practitioner</span></h3><p class="txt">Kui Lipa Health will be led by Devin Mujkanović, who is completing his family nurse practitioner degree in August 2027. Before nursing, Devin worked in patient navigation, making sure no one had to face a confusing health system on their own. That’s why care here feels personal. Expect a provider who knows you by name, remembers your story, and always makes time for your questions.</p></div>
 </div></section>
 <section class="band c" id="expect" aria-labelledby="expect-h"><div class="wrap">
 <h2 class="label" id="expect-h">What to expect when we open</h2>
